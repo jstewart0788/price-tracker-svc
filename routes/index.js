@@ -35,9 +35,9 @@ router.put('/', async ({ body: { position } }, res) => {
 })
 
 
-router.delete('/', async ({ body: { position } }, res) => {
+router.delete('/', async ({ body: { symbol } }, res) => {
     try {
-        const response = await stock.deletePosition(position)
+        const response = await stock.deletePosition(symbol)
         res.json({ msg: " Position Deleted!", response });
     }
     catch (err) {

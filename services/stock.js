@@ -7,14 +7,14 @@ module.exports = class StockService {
     }
 
     async createPosition(position) {
-        return Stock.create(position).exec();
+        return Stock.create(position);
     }
 
     async updatePosition(position) {
         return Stock.updateOne({ symbol: position.symbol }, position).exec();
     }
 
-    async deletePosition(position) {
-        return Stock.deleteOne({ symbol: position.symbol }).exec();
+    async deletePosition(symbol) {
+        return Stock.deleteOne({ symbol }).exec();
     }
 };
